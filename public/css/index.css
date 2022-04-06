@@ -1,0 +1,117 @@
+/* GENERAL AND RESETS */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  font-family: "Times New Roman", Times, serif;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+/* CONTAINER  */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #0098ff, #00c8ff, #00f8ff, #00ffc3);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  width: 100vw;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* TODO CONTAINER  */
+#todo-container {
+  background-color: white;
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  width: 28em;
+}
+
+#todo-container > h2 {
+  font-size: 2.2em;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 2em;
+}
+
+#form-new-todo > input {
+  width: 90%;
+  height: 2.5em;
+  padding: 0.5em 1em;
+  margin: 0 0.5em 1em 0;
+  border-radius: 0.3em;
+  border: 0.1em solid gray;
+}
+
+#form-new-todo > input:focus {
+  border-color: plum;
+  transition: 0.5s;
+}
+
+#form-new-todo > button {
+  width: 15%;
+  height: 2.5em;
+  background-color: plum;
+  color: white;
+  border-radius: 0.3em;
+}
+
+/* #form-new-todo > button:hover {
+  background-color: purple;
+  transition: 1.5s;
+} */
+
+#list-todo {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+#list-todo > li {
+  background-color: rgb(230, 230, 230);
+  margin-bottom: 0.5em;
+  padding: 0.5em 1em;
+  font-style: italic;
+}
+
+#list-todo > li:last-child {
+  margin-bottom: 1em;
+}
+
+#info-todo-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+#info-todo-list > p {
+  font-size: 1.1em;
+}
+
+#info-todo-list > button {
+  padding: 0.5em;
+  background-color: rgb(219, 0, 219);
+  color: white;
+  border-radius: 0.3em;
+}
+
+/* #info-todo-list > button:hover {
+  background-color: purple;
+  transition: 1.5s;
+} */
