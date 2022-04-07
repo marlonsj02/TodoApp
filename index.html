@@ -33,15 +33,16 @@
             id="ipt-new-todo"
             placeholder="Adicione sua nova tarefa"
           />
-          <button><i class="fas fa-plus"></i></button>
+          <button id="btn-add-todo">
+            <i class="fas fa-plus"></i>
+          </button>
         </div>
-        <ul id="list-todo">
-          <li>Dever de casa</li>
-          <li>Dever de casa</li>
-        </ul>
+        <ul id="list-todo"></ul>
         <div id="info-todo-list">
-          <p>Você possui 1 tarefa pendente</p>
-          <button>Limpar Tudo</button>
+          <p>
+            Você possui <span id="p-info-todo-list">0</span> tarefas pendentes
+          </p>
+          <button id="btn-clear-all">Limpar Tudo</button>
         </div>
       </div>
     </main>
@@ -58,5 +59,7 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <!-- Index JS  -->
+    <script src="public/js/index.js"></script>
   </body>
 </html>
