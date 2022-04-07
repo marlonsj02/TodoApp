@@ -1,3 +1,18 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = initializeApp({
+  apiKey: "AIzaSyDX6809mYc-5DINoa6KLyPS4Ql1HV0W4rE",
+  authDomain: "todolist-hk.firebaseapp.com",
+  projectId: "todolist-hk",
+  storageBucket: "todolist-hk.appspot.com",
+  messagingSenderId: "97699539833",
+  appId: "1:97699539833:web:4273d1cfcfc3c393555da8",
+});
+
 // References
 const iptNewTodo = document.getElementById("ipt-new-todo");
 const btnAddTodo = document.getElementById("btn-add-todo");
