@@ -16,9 +16,9 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(-45deg, #0098ff, #00c8ff, #00f8ff, #00ffc3);
+  background: linear-gradient(-45deg, #002aff, #cb00ff, #00fffd, #ff00c9);
   background-size: 400% 400%;
-  animation: gradient 5s ease infinite;
+  animation: gradient 10s ease infinite;
   width: 100vw;
   height: 100vh;
 }
@@ -40,7 +40,7 @@ main {
   background-color: white;
   padding: 1em 2em;
   border-radius: 0.5em;
-  width: 28em;
+  width: 50%;
 }
 
 #todo-container > h2 {
@@ -48,6 +48,16 @@ main {
   font-weight: 600;
   font-style: italic;
   line-height: 2em;
+}
+
+#p-msg-callback {
+  display: none;
+  text-align: center;
+  padding: 0.2em;
+  width: 90%;
+  border-radius: 1em;
+  margin: 0 auto 1.5em;
+  color: white;
 }
 
 #form-new-todo > input {
@@ -135,4 +145,54 @@ main {
 .item-list-todo > li > button:hover {
   background-color: red;
   transition: 1.5s;
+}
+
+/* RESPONSIVE PAGE  */
+@media screen and (max-width: 768px) {
+  #todo-container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #todo-container {
+    width: 80%;
+  }
+
+  .item-list-todo > li > button {
+    display: block;
+  }
+
+  #info-todo-list {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #info-todo-list > button {
+    padding: 0.2em;
+    width: 90%;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #form-new-todo {
+    flex-direction: column;
+  }
+
+  #form-new-todo > input {
+    width: 100%;
+    padding: 0.9em;
+  }
+
+  #form-new-todo > button {
+    width: 90%;
+    margin: 0 auto 1.5em;
+    height: 1.5em;
+  }
+
+  #info-todo-list > p {
+    font-size: 0.9em;
+  }
 }

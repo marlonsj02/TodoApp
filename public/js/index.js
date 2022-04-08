@@ -1,9 +1,6 @@
-// Import the functions you need from the SDKs you need
+// Firebase Initialization
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
 const firebaseConfig = initializeApp({
   apiKey: "AIzaSyDX6809mYc-5DINoa6KLyPS4Ql1HV0W4rE",
   authDomain: "todolist-hk.firebaseapp.com",
@@ -14,6 +11,7 @@ const firebaseConfig = initializeApp({
 });
 
 // References
+const pMsgCallback = document.getElementById("p-msg-callback");
 const iptNewTodo = document.getElementById("ipt-new-todo");
 const btnAddTodo = document.getElementById("btn-add-todo");
 const ulListTodo = document.getElementById("list-todo");
@@ -21,18 +19,30 @@ const btnDeleteTodo = document.getElementsByClassName("btn-delete-todo");
 const pInfoTodoList = document.getElementById("p-info-todo-list");
 const btnClearAll = document.getElementById("btn-clear-all");
 
+// Add New Task Button Event
 btnAddTodo.onclick = () => {
   if (iptNewTodo.value.length !== 0) {
-    localStorage.setItem(localStorage.length++, iptNewTodo.value);
-    alert("Tarefa criada com sucesso!");
-    location.reload();
+    localStorage.setItem(localStorage.length + 1, iptNewTodo.value);
+    pMsgCallback.style.display = "block";
+    pMsgCallback.setAttribute("class", "bg-success");
+    pMsgCallback.innerHTML = "Tarefa criada com sucesso!";
+    setTimeout(() => {
+      pMsgCallback.style.display = "none";
+      location.reload();
+    }, 1000);
   } else {
-    alert(
-      "O campo para adicionar tarefa está vazio, preencha-o e tente novamente!"
-    );
+    pMsgCallback.style.display = "block";
+    pMsgCallback.setAttribute("class", "bg-danger");
+    pMsgCallback.innerHTML =
+      "Não foi possível criar a tarefa, atualize a página e tente novamente!";
+    setTimeout(() => {
+      pMsgCallback.style.display = "none";
+      location.reload();
+    }, 1500);
   }
 };
 
+// Display of Created Tasks
 if (localStorage.length > 0) {
   for (let index = 0; index < localStorage.length; index++) {
     const li = document.createElement("li");
@@ -65,19 +75,38 @@ if (localStorage.length > 0) {
   }
 }
 
+// Delete Task Button Event
 for (const btn of btnDeleteTodo) {
   btn.onclick = () => {
     localStorage.removeItem(btn.value);
-    location.reload();
+    pMsgCallback.style.display = "block";
+    pMsgCallback.setAttribute("class", "bg-success");
+    pMsgCallback.innerHTML = "Tarefa excluída com sucesso!";
+    setTimeout(() => {
+      pMsgCallback.style.display = "none";
+      location.reload();
+    }, 1000);
   };
 }
 
+// Delete All Tasks Button Event
 btnClearAll.onclick = () => {
   if (localStorage.length !== 0) {
     localStorage.clear();
-    location.reload();
+    pMsgCallback.style.display = "block";
+    pMsgCallback.setAttribute("class", "bg-success");
+    pMsgCallback.innerHTML = "Todas as tarefas foram excluídas com sucesso!";
+    setTimeout(() => {
+      pMsgCallback.style.display = "none";
+      location.reload();
+    }, 1000);
   } else {
-    alert("Você não possuí tarefas para excluir!");
-    location.reload();
+    pMsgCallback.style.display = "block";
+    pMsgCallback.setAttribute("class", "bg-danger");
+    pMsgCallback.innerHTML = "Você não possuí tarefas para excluir!";
+    setTimeout(() => {
+      pMsgCallback.style.display = "none";
+      location.reload();
+    }, 1500);
   }
 };
