@@ -2,12 +2,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 
 const firebaseConfig = initializeApp({
-  apiKey: "AIzaSyDX6809mYc-5DINoa6KLyPS4Ql1HV0W4rE",
-  authDomain: "todolist-hk.firebaseapp.com",
-  projectId: "todolist-hk",
-  storageBucket: "todolist-hk.appspot.com",
-  messagingSenderId: "97699539833",
-  appId: "1:97699539833:web:4273d1cfcfc3c393555da8",
+  apiKey: "AIzaSyCoVLbCj9xi5VPPHdXCU6ekIpU6aWfqaaw",
+  authDomain: "hk-todolist.firebaseapp.com",
+  projectId: "hk-todolist",
+  storageBucket: "hk-todolist.appspot.com",
+  messagingSenderId: "571967877361",
+  appId: "1:571967877361:web:9e085316c55a22d81cb950",
 });
 
 // References
