@@ -2,12 +2,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 
 const firebaseConfig = initializeApp({
-  apiKey: "AIzaSyCoVLbCj9xi5VPPHdXCU6ekIpU6aWfqaaw",
-  authDomain: "hk-todolist.firebaseapp.com",
-  projectId: "hk-todolist",
-  storageBucket: "hk-todolist.appspot.com",
-  messagingSenderId: "571967877361",
-  appId: "1:571967877361:web:9e085316c55a22d81cb950",
+  apiKey: "AIzaSyAVRJHAjN7jjbSwcICcQaKcYndVOyK27Es",
+  authDomain: "todolist-lhk.firebaseapp.com",
+  projectId: "todolist-lhk",
+  storageBucket: "todolist-lhk.appspot.com",
+  messagingSenderId: "118525396467",
+  appId: "1:118525396467:web:daf6e66ee79a677c477e86",
 });
 
 // References
@@ -62,7 +62,7 @@ if (localStorage.length > 0) {
     li2.innerHTML = localStorage.getItem(localStorage.key(index));
     btn.setAttribute("class", "btn-delete-todo");
     btn.setAttribute("value", localStorage.key(index));
-    i.setAttribute("class", "fa fa-trash");
+    i.innerHTML = "X";
 
     ulListTodo.appendChild(li);
     li.appendChild(ul);
@@ -85,7 +85,7 @@ for (const btn of btnDeleteTodo) {
     setTimeout(() => {
       pMsgCallback.style.display = "none";
       location.reload();
-    }, 1000);
+    }, 500);
   };
 }
 
