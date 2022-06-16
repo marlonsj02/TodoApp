@@ -62,7 +62,7 @@ if (localStorage.length > 0) {
     li2.innerHTML = localStorage.getItem(localStorage.key(index));
     btn.setAttribute("class", "btn-delete-todo");
     btn.setAttribute("value", localStorage.key(index));
-    i.innerHTML = "X";
+    i.setAttribute("class", "fa fa-times");
 
     ulListTodo.appendChild(li);
     li.appendChild(ul);
