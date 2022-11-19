@@ -1,0 +1,14 @@
+name: Test CI TodoList
+
+on: [push]
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "First Step"
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: List Files
+        run: ls ${{github.workspace}}
+      - name: Status
+        run: echo "Status ${{job.status}}"
